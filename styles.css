@@ -110,6 +110,7 @@ body {
   object-fit: cover;
 }
 
+
 .photo-fallback {
   min-height: 260px;
   display: grid;
@@ -118,7 +119,6 @@ body {
   font-weight: 600;
   background: linear-gradient(135deg, #f5f1ff 0%, #ebe4fb 100%);
 }
-
 
 .hero-actions {
   display: flex;
