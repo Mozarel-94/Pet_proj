@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Дмитрий Зуйков — Портфолио</title>
+    <meta
+      name="description"
+      content="Персональный сайт с информацией о профессиональном опыте, проектах и контактах."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav-wrap">
+        <a class="logo" href="#home">Дмитрий Зуйков</a>
+        <nav class="nav" aria-label="Основная навигация">
+          <a href="#about">Обо мне</a>
+          <a href="#experience">Опыт</a>
+          <a href="#projects">Проекты</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero container section">
+        <div class="hero-layout">
+          <div>
+            <p class="label">Открыт к сотрудничеству</p>
+            <h1>Привет, я Дмитрий Зуйков</h1>
+            <p class="hero-subtitle">
+              Product / Frontend специалист, создаю понятные и аккуратные цифровые продукты.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#experience">Смотреть опыт</a>
+              <a class="btn btn-secondary" href="#contacts">Связаться</a>
+            </div>
+          </div>
+          <figure class="photo-frame">
+            <img class="profile-photo" src="img/profile-photo.svg" alt="Фото Дмитрия Зуйкова" />
+          </figure>
+        </div>
+        <ul class="stats">
+          <li><strong>5+</strong><span>лет опыта</span></li>
+          <li><strong>20+</strong><span>проектов</span></li>
+          <li><strong>12</strong><span>довольных клиентов</span></li>
+        </ul>
+      </section>
+
+      <section id="about" class="container section card">
+        <h2>Обо мне</h2>
+        <p>
+          Я помогаю компаниям запускать и улучшать веб-продукты: от идеи и прототипа до релиза и
+          роста ключевых метрик. Люблю минималистичный дизайн, быстрый интерфейс и чистую структуру
+          кода.
+        </p>
+        <div class="skills">
+          <span>JavaScript / TypeScript</span>
+          <span>React / Next.js</span>
+          <span>UX/UI мышление</span>
+          <span>Командная работа</span>
+          <span>Коммуникация</span>
+        </div>
+      </section>
+
+      <section id="experience" class="container section">
+        <h2>Опыт</h2>
+        <div class="timeline">
+          <article class="card">
+            <h3>Senior Frontend Developer — Example Tech</h3>
+            <p class="muted">2022 — настоящее время</p>
+            <ul>
+              <li>Руководил разработкой ключевого пользовательского кабинета.</li>
+              <li>Оптимизировал производительность интерфейса и уменьшил время загрузки на 35%.</li>
+              <li>Настроил дизайн-систему для ускорения разработки новых фич.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Frontend Developer — Digital Studio</h3>
+            <p class="muted">2019 — 2022</p>
+            <ul>
+              <li>Разработал 10+ клиентских лендингов и корпоративных сайтов.</li>
+              <li>Увеличил конверсию формы заявки в среднем на 18% за счет UX-улучшений.</li>
+              <li>Внедрил адаптивные UI-компоненты для всех экранов.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="container section">
+        <h2>Проекты</h2>
+        <div class="grid">
+          <article class="card project">
+            <h3>Личный финансовый трекер</h3>
+            <p>Веб-приложение для контроля расходов и планирования бюджета.</p>
+            <p class="muted">React, TypeScript, Chart.js</p>
+            <a href="#" aria-label="Открыть проект">Смотреть кейс →</a>
+          </article>
+          <article class="card project">
+            <h3>CRM для сервиса услуг</h3>
+            <p>Система заявок и календарь для команды из 20+ менеджеров.</p>
+            <p class="muted">Next.js, Node.js, PostgreSQL</p>
+            <a href="#" aria-label="Открыть проект">Смотреть кейс →</a>
+          </article>
+          <article class="card project">
+            <h3>Портал онлайн-обучения</h3>
+            <p>Платформа с личными кабинетами учеников и преподавателей.</p>
+            <p class="muted">Vue, Firebase, Tailwind</p>
+            <a href="#" aria-label="Открыть проект">Смотреть кейс →</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="contacts" class="container section card">
+        <h2>Соцсети и контакты</h2>
+        <div class="contacts-layout">
+          <ul class="socials">
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Telegram</a></li>
+          </ul>
+          <form class="contact-form" action="#" method="post">
+            <label>
+              Дмитрий Зуйков
+              <input type="text" name="name" placeholder="Дмитрий Зуйков" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+            <label>
+              Сообщение
+              <textarea name="message" rows="4" placeholder="Кратко о вашем запросе"></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2026 Дмитрий Зуйков. Сделано в минималистичном стиле.</p>
+      </div>
+    </footer>
+  </body>
+</html>

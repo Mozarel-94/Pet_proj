@@ -1,0 +1,9 @@
+<svg width="800" height="1000" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1000" rx="40" fill="#EFEAFB"/>
+  <circle cx="400" cy="340" r="160" fill="#D9CFF4"/>
+  <path d="M180 820C180 666 279 560 400 560C521 560 620 666 620 820V1000H180V820Z" fill="#C5B5EE"/>
+  <circle cx="344" cy="320" r="16" fill="#6E5AA5"/>
+  <circle cx="456" cy="320" r="16" fill="#6E5AA5"/>
+  <path d="M350 404C369 422 431 422 450 404" stroke="#6E5AA5" stroke-width="12" stroke-linecap="round"/>
+  <text x="400" y="955" text-anchor="middle" fill="#6E5AA5" font-size="42" font-family="Inter, Arial, sans-serif">Дмитрий Зуйков</text>
+</svg>
