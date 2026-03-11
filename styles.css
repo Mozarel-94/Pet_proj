@@ -110,6 +110,16 @@ body {
   object-fit: cover;
 }
 
+
+.photo-fallback {
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-weight: 600;
+  background: linear-gradient(135deg, #f5f1ff 0%, #ebe4fb 100%);
+}
+
 .hero-actions {
   display: flex;
   gap: 0.75rem;
@@ -239,6 +249,17 @@ h2 {
   display: block;
 }
 
+
+.contact-info a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--border);
+}
+
+.contact-info p {
+  margin: 0.7rem 0 0;
+}
+
 .contact-form {
   display: grid;
   gap: 0.8rem;
@@ -280,6 +301,10 @@ textarea {
   }
 
   .profile-photo {
+    min-height: 220px;
+  }
+
+  .photo-fallback {
     min-height: 220px;
   }
 

@@ -37,8 +37,8 @@
               <a class="btn btn-secondary" href="#contacts">Связаться</a>
             </div>
           </div>
-          <figure class="photo-frame">
-            <img class="profile-photo" src="img/profile-photo.svg" alt="Фото Дмитрия Зуйкова" />
+          <figure class="photo-frame" aria-label="Место для фото">
+            <div class="photo-fallback">Фото Дмитрия Зуйкова</div>
           </figure>
         </div>
         <ul class="stats">
@@ -56,9 +56,9 @@
           кода.
         </p>
         <div class="skills">
-          <span>JavaScript / TypeScript</span>
-          <span>React / Next.js</span>
-          <span>UX/UI мышление</span>
+          <span>Jira, Confluence</span>
+          <span>Microsoft Project</span>
+          <span>Вайбкодинг</span>
           <span>Командная работа</span>
           <span>Коммуникация</span>
         </div>
@@ -115,31 +115,26 @@
       <section id="contacts" class="container section card">
         <h2>Соцсети и контакты</h2>
         <div class="contacts-layout">
-          <ul class="socials">
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">Telegram</a></li>
-          </ul>
-          <form class="contact-form" action="#" method="post">
-            <label>
-              Дмитрий Зуйков
-              <input type="text" name="name" placeholder="Дмитрий Зуйков" required />
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">Telegram</a></li>
-            <li><a href="#">X / Twitter</a></li>
-          </ul>
+          <div class="contact-info">
+            <ul class="socials">
+              <li><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a></li>
+              <li><a href="https://t.me/" target="_blank" rel="noreferrer">Telegram</a></li>
+            </ul>
+            <p class="muted">Email: <a href="mailto:d.zuykov@example.com">d.zuykov@example.com</a></p>
+            <p class="muted">Телефон: <a href="tel:+79990000000">+7 (999) 000-00-00</a></p>
+          </div>
           <form class="contact-form" action="#" method="post">
             <label>
               Имя
-              <input type="text" name="name" placeholder="Ваше имя" required />
+              <input type="text" name="name" placeholder="Дмитрий Зуйков" required />
             </label>
             <label>
               Email
-              <input type="email" name="email" placeholder="you@example.com" required />
+              <input type="email" name="email" placeholder="d.zuykov@example.com" required />
             </label>
             <label>
               Сообщение
-              <textarea name="message" rows="4" placeholder="Кратко о вашем запросе"></textarea>
+              <textarea name="message" rows="4" placeholder="Кратко о вашем запросе" required></textarea>
             </label>
             <button type="submit" class="btn btn-primary">Отправить</button>
           </form>
