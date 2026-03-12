@@ -37,8 +37,8 @@
               <a class="btn btn-secondary" href="#contacts">Связаться</a>
             </div>
           </div>
-          <figure class="photo-frame" aria-label="Место для фото">
-            <img src="img/photo_agile.jpg" alt="Profile photo" width="auto" height="260px">
+          <figure class="photo-frame" aria-label="Фото профиля">
+            <img class="profile-photo" src="img/photo_agile.jpg" alt="Фото Дмитрия Зуйкова" />
           </figure>
         </div>
       </section>
@@ -123,22 +123,20 @@
         <h2>Проекты</h2>
         <div class="grid">
           <article class="card project">
-            <h3>Личный финансовый трекер</h3>
-            <p>Веб-приложение для контроля расходов и планирования бюджета.</p>
-            <p class="muted">React, TypeScript, Chart.js</p>
-            <a href="#" aria-label="Открыть проект">Смотреть кейс →</a>
+            <h3>САПР СВЧ микросхем</h3>
+            <p>
+              Разработка первой в России системы автоматизированного проектирования СВЧ
+              микроэлектроники уровня Cadence AWR / Keysight ADS.
+            </p>
+            <p class="muted">Product Ownership, C++, QT, Python, Agile/Scrum</p>
           </article>
           <article class="card project">
-            <h3>CRM для сервиса услуг</h3>
-            <p>Система заявок и календарь для команды из 20+ менеджеров.</p>
-            <p class="muted">Next.js, Node.js, PostgreSQL</p>
-            <a href="#" aria-label="Открыть проект">Смотреть кейс →</a>
-          </article>
-          <article class="card project">
-            <h3>Портал онлайн-обучения</h3>
-            <p>Платформа с личными кабинетами учеников и преподавателей.</p>
-            <p class="muted">Vue, Firebase, Tailwind</p>
-            <a href="#" aria-label="Открыть проект">Смотреть кейс →</a>
+            <h3>Оптимизация доставки светлых нефтепродуктов</h3>
+            <p>
+              AI-продукт для оптимизации транспортной логистики: маршрутизация, снижение
+              издержек и повышение эффективности доставки.
+            </p>
+            <p class="muted">AI/ML, Логистика, Product Discovery, Пилотирование</p>
           </article>
         </div>
       </section>
@@ -148,11 +146,27 @@
         <div class="contacts-layout">
           <div class="contact-info">
             <ul class="socials">
-              <li><a href="https://github.com/Pet_proj" target="_blank" rel="noreferrer">GitHub</a></li>
-              <li><a href="https://t.me/Dima_vs_agile" target="_blank" rel="noreferrer">Telegram</a></li>
+              <li>
+                <a href="https://github.com/Pet_proj" target="_blank" rel="noreferrer">
+                  <span class="icon" aria-hidden="true">🐙</span>
+                  Ссылка на мой проект на GitHub: Pet_proj
+                </a>
+              </li>
+              <li>
+                <a href="https://t.me/Dima_vs_agile" target="_blank" rel="noreferrer">
+                  <span class="icon" aria-hidden="true">✈️</span>
+                  t.me/Dima_vs_agile
+                </a>
+              </li>
             </ul>
-            <p class="muted">Email: <a href="mailto:d.zuykov@example.com">d.zuykov@example.com</a></p>
-            <p class="muted">Телефон: <a href="tel:+79990000000">+7 (999) 000-00-00</a></p>
+            <p class="muted contact-line">
+              <span class="icon" aria-hidden="true">✉️</span>
+              Email: <a href="mailto:d.zuykov@example.com">d.zuykov@example.com</a>
+            </p>
+            <p class="muted contact-line">
+              <span class="icon" aria-hidden="true">📞</span>
+              Телефон: <a href="tel:+79990000000">+7 (999) 000-00-00</a>
+            </p>
           </div>
           <form class="contact-form" action="#" method="post">
             <label>
