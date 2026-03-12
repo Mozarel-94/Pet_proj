@@ -250,7 +250,14 @@ h2 {
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 0.5rem;
+}
+
+.social-logo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 .icon {
