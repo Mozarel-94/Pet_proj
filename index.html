@@ -182,7 +182,10 @@
               Телефон: <a href="tel:+79990000000">+7 (999) 000-00-00</a>
             </p>
           </div>
-          <form class="contact-form" action="#" method="post">
+          <!-- Изменение: настроена отправка формы через Formspree -->
+          <form class="contact-form" action="https://formspree.io/f/xjgarwag" method="POST">
+            <!-- Изменение: добавлено скрытое поле темы письма для Formspree -->
+            <input type="hidden" name="_subject" value="Новое сообщение с сайта" />
             <label>
               Имя
               <input type="text" name="name" placeholder="Дмитрий Зуйков" required />
@@ -196,6 +199,8 @@
               <textarea name="message" rows="4" placeholder="Кратко о вашем запросе" required></textarea>
             </label>
             <button type="submit" class="btn btn-primary">Отправить</button>
+            <!-- Изменение: сообщение об успешной отправке формы -->
+            <p id="form-success-message" class="muted" hidden>Спасибо! Сообщение отправлено.</p>
           </form>
         </div>
       </section>
@@ -206,5 +211,34 @@
         <p>© 2026 Дмитрий Зуйков. Сделано в минималистичном стиле.</p>
       </div>
     </footer>
+
+    <script>
+      // Изменение: отправка формы через fetch без перезагрузки страницы.
+      const contactForm = document.querySelector('.contact-form');
+      const successMessage = document.querySelector('#form-success-message');
+
+      contactForm?.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(contactForm);
+
+        try {
+          const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              Accept: 'application/json'
+            }
+          });
+
+          if (response.ok) {
+            contactForm.reset();
+            successMessage.hidden = false;
+          }
+        } catch (error) {
+          console.error('Ошибка отправки формы:', error);
+        }
+      });
+    </script>
   </body>
 </html>
