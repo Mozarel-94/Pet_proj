@@ -14,12 +14,18 @@
     <header class="header">
       <div class="container nav-wrap">
         <a class="logo" href="#home">Дмитрий Зуйков</a>
-        <nav class="nav" aria-label="Основная навигация">
-          <a href="#about">Обо мне</a>
-          <a href="#experience">Опыт</a>
-          <a href="#projects">Проекты</a>
-          <a href="#contacts">Контакты</a>
-        </nav>
+        <div class="header-actions">
+          <nav class="nav" aria-label="Основная навигация">
+            <a href="#about">Обо мне</a>
+            <a href="#experience">Опыт</a>
+            <a href="#projects">Проекты</a>
+            <a href="#contacts">Контакты</a>
+          </nav>
+          <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Переключить тему">
+            <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+            <span class="theme-toggle-text">Dark mode</span>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -117,6 +123,66 @@
             </ul>
           </article>
         </div>
+        <div class="roadmap card" aria-label="Таймлайн профессионального опыта">
+          <div class="roadmap-header">
+            <p class="label">Roadmap</p>
+            <h3>Ключевые этапы профессионального пути</h3>
+            <p class="muted">
+              От запуска AI-продуктов и продуктовой разработки к управлению крупными инженерными
+              программами и координации распределенных команд.
+            </p>
+          </div>
+          <div class="roadmap-track">
+            <article class="roadmap-step">
+              <span class="roadmap-year">2023</span>
+              <div class="roadmap-dot" aria-hidden="true"></div>
+              <div class="roadmap-content">
+                <h4>Сбер Бизнес Софт</h4>
+                <p class="muted">Product Owner</p>
+                <p>
+                  Переход в продуктовую роль: запуск новых B2B-направлений, проверка гипотез и
+                  развитие AI-инициатив для бизнеса.
+                </p>
+              </div>
+            </article>
+            <article class="roadmap-step">
+              <span class="roadmap-year">2024</span>
+              <div class="roadmap-dot" aria-hidden="true"></div>
+              <div class="roadmap-content">
+                <h4>Вывод продуктов в пилоты</h4>
+                <p class="muted">Discovery -> Prototype -> Pilot</p>
+                <p>
+                  Собрал команду с нуля, сформировал бэклог, довел AI-решения до рабочих прототипов
+                  и пилотных внедрений.
+                </p>
+              </div>
+            </article>
+            <article class="roadmap-step">
+              <span class="roadmap-year">2025</span>
+              <div class="roadmap-dot" aria-hidden="true"></div>
+              <div class="roadmap-content">
+                <h4>Систематика Консалтинг</h4>
+                <p class="muted">Руководитель сложного R&D-проекта</p>
+                <p>
+                  Масштабирование зоны ответственности: управление крупным госконтрактом, синхронизация
+                  подрядчиков и построение процессов разработки.
+                </p>
+              </div>
+            </article>
+            <article class="roadmap-step">
+              <span class="roadmap-year">2026</span>
+              <div class="roadmap-dot" aria-hidden="true"></div>
+              <div class="roadmap-content">
+                <h4>Текущий фокус</h4>
+                <p class="muted">Delivery, Agile, системное управление</p>
+                <p>
+                  Развитие экспертизы на стыке продуктового подхода, инженерного delivery и управления
+                  межфункциональными командами.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
 
       <section id="projects" class="container section">
@@ -213,6 +279,60 @@
     </footer>
 
     <script>
+      const storageKey = 'site-theme';
+      const root = document.documentElement;
+      const body = document.body;
+      const themeToggle = document.querySelector('.theme-toggle');
+      const themeToggleIcon = document.querySelector('.theme-toggle-icon');
+      const themeToggleText = document.querySelector('.theme-toggle-text');
+
+      const getStoredTheme = () => {
+        try {
+          return localStorage.getItem(storageKey);
+        } catch (error) {
+          return null;
+        }
+      };
+
+      const setStoredTheme = (theme) => {
+        try {
+          localStorage.setItem(storageKey, theme);
+        } catch (error) {
+          // Некоторые браузеры блокируют localStorage для file://, поэтому silently fallback.
+        }
+      };
+
+      const updateThemeToggle = (theme) => {
+        const isDark = theme === 'dark';
+        themeToggle?.setAttribute('aria-pressed', String(isDark));
+
+        if (themeToggleIcon) {
+          themeToggleIcon.textContent = isDark ? '☀️' : '🌙';
+        }
+
+        if (themeToggleText) {
+          themeToggleText.textContent = isDark ? 'Light mode' : 'Dark mode';
+        }
+      };
+
+      const applyTheme = (theme) => {
+        root.dataset.theme = theme;
+        body.dataset.theme = theme;
+        setStoredTheme(theme);
+        updateThemeToggle(theme);
+      };
+
+      const savedTheme = getStoredTheme();
+      const preferredTheme =
+        savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+      applyTheme(preferredTheme);
+
+      themeToggle?.addEventListener('click', () => {
+        const nextTheme = body.dataset.theme === 'dark' ? 'light' : 'dark';
+        applyTheme(nextTheme);
+      });
+
       // Изменение: отправка формы через fetch без перезагрузки страницы.
       const contactForm = document.querySelector('.contact-form');
       const successMessage = document.querySelector('#form-success-message');
